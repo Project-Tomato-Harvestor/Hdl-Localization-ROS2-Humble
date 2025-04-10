@@ -1,23 +1,26 @@
-# estimation parameters
-ransac/voxel_based: True
-ransac/max_iterations: 1000000
-ransac/matching_budget: 10000
-ransac/max_correspondence_distance: 1.0
-ransac/similarity_threshold: 0.5
-ransac/correspondence_randomness: 2
-ransac/inlier_fraction: 0.25
+ransac:
+  
+  ros__parameters:
+    # estimation parameters
+    voxel_based: True
+    max_iterations: 1000000
+    matching_budget: 10000
+    max_correspondence_distance: 1.0
+    similarity_threshold: 0.5
+    correspondence_randomness: 2
+    inlier_fraction: 0.25
 
-# valid transformation range
-ransac/x_min: -10000.0
-ransac/x_max: 10000.0
-ransac/y_min: -10000.0
-ransac/y_max: 10000.0
-ransac/z_min: -10000.0
-ransac/z_max: 10000.0
+    # valid transformation range
+    x_min: -10000.0
+    x_max: 10000.0
+    y_min: -10000.0
+    y_max: 10000.0
+    z_min: -10000.0
+    z_max: 10000.0
 
-ransac/roll_min: -3.15
-ransac/roll_max: 3.15
-ransac/pitch_min: -3.15
-ransac/pitch_max: 3.15
-ransac/yaw_min: -3.15
-ransac/yaw_max: 3.15
+    roll_min: -3.15
+    roll_max: 3.15
+    pitch_min: -3.15
+    pitch_max: 3.15
+    yaw_min: -3.15
+    yaw_max: 3.15

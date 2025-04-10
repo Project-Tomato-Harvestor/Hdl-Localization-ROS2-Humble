@@ -1,6 +1,13 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <!-- load params -->
+  <node pkg="$(find hdl_global_localization)" exec="hdl_global_localization_node" name="hdl_global_localization" ns="/hdl_global_localization" output="screen">
+    <param from="/config/general_config.yaml"/>
+    <param from="/config/bbs_config.yaml"/>
+    <param from="/config/fpfh_config.yaml"/>
+    <param from="/config/ransac_config.yaml"/>
+    <param from="/config/teaser_config.yaml"/>
+  </node>
   <rosparam command="load" file="$(find hdl_global_localization)/config/general_config.yaml" ns="/hdl_global_localization" />
   <rosparam command="load" file="$(find hdl_global_localization)/config/bbs_config.yaml" ns="/hdl_global_localization" />
   <rosparam command="load" file="$(find hdl_global_localization)/config/fpfh_config.yaml" ns="/hdl_global_localization" />

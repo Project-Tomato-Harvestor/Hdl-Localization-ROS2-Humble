@@ -78,8 +78,8 @@ public:
     use_global_localization = declare_parameter<bool>("use_global_localization", true);
     if (use_global_localization) {
       RCLCPP_INFO_STREAM(get_logger(), "wait for global localization services");
-      set_global_map_service = create_client<hdl_global_localization::srv::SetGlobalMap>("/hdl_global_localization/set_global_map");
-      query_global_localization_service = create_client<hdl_global_localization::srv::QueryGlobalLocalization>("/hdl_global_localization/query");
+      set_global_map_service = create_client<hdl_global_localization::srv::SetGlobalMap>("set_global_map");
+      query_global_localization_service = create_client<hdl_global_localization::srv::QueryGlobalLocalization>("query");
       while (!set_global_map_service->wait_for_service(std::chrono::milliseconds(1000))) {
         RCLCPP_WARN(get_logger(), "Waiting for SetGlobalMap service");
         if (!rclcpp::ok()) {
@@ -332,9 +332,9 @@ private:
       auto req = std::make_shared<hdl_global_localization::srv::SetGlobalMap::Request>();
       pcl::toROSMsg(*globalmap, req->global_map);
       auto result = set_global_map_service->async_send_request(req);
-      if (rclcpp::spin_until_future_complete(rclcpp::Node::SharedPtr(this), result) != rclcpp::FutureReturnCode::SUCCESS) {
-        RCLCPP_ERROR(get_logger(), "Failed to call SetGlobalMap service");
-      }
+      // if (rclcpp::spin_until_future_complete(rclcpp::Node::SharedPtr(this), result) != rclcpp::FutureReturnCode::SUCCESS) {
+      //   RCLCPP_ERROR(get_logger(), "Failed to call SetGlobalMap service");
+      // }
     }
   }
 

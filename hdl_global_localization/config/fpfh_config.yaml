@@ -1,2 +1,5 @@
-fpfh/normal_estimation_radius: 2.0
-fpfh/search_radius: 4.0
+fpfh:
+  
+  ros__parameters:
+    normal_estimation_radius: 2.0
+    search_radius: 4.0
