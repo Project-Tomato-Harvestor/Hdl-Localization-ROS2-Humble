@@ -20,7 +20,7 @@ namespace hdl_global_localization {
 
 class GlobalLocalizationNode : public rclcpp::Node {
 public:
-  GlobalLocalizationNode(const rclcpp::NodeOptions& options) : rclcpp::Node("hdl_global_localization", options) {
+  GlobalLocalizationNode(const rclcpp::NodeOptions& options) : rclcpp::Node("GlobalLocalizationNode", options) {
     declare_parameter<double>("globalmap_downsample_resolution", 0.5);
     declare_parameter<double>("query_downsample_resolution", 0.5);
     

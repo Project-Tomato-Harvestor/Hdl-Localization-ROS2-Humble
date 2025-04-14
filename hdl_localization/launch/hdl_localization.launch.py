@@ -20,7 +20,7 @@ def generate_launch_description():
     points_topic = LaunchConfiguration('points_topic', default='/unilidar/cloud')
     odom_child_frame_id = LaunchConfiguration('odom_child_frame_id', default='unilidar_lidar') 
     imu_topic = LaunchConfiguration('imu_topic', default='/unilidar/imu')
-    globalmap_pcd = DeclareLaunchArgument('globalmap_pcd', default_value='/home/rmml05/thr_ws/src/thr_database/maps/10F_Excellence.pcd',description='Path to the global map PCD file')#scans_1002.pcd', description='Path to the global map PCD file')
+    globalmap_pcd = DeclareLaunchArgument('globalmap_pcd', default_value='/home/rmml05/thr_ws/src/thr_V2.5/thr_database/maps/room_1003_0401.pcd',description='Path to the global map PCD file')#scans_1002.pcd', description='Path to the global map PCD file')
 
     # arguments
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
